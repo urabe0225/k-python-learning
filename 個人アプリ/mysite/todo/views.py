@@ -13,35 +13,35 @@ from .models import TodoModel
 # ToDoの一覧表示
 
 class TodoList(ListView):
-    template_name = 'base.html'
+    template_name = 'todo/list.html'
     model = TodoModel
 
 # ToDoの詳細表示
 
 class TodoDetail(DetailView):
-    template_name = 'detail.html'
+    template_name = 'todo/detail.html'
     model = TodoModel
 
 # ToDoの作成機能
 class TodoCreate(CreateView):
-    template_name = 'create.html'
+    template_name = 'todo/create.html'
     model = TodoModel
-    fields = ('title','memo','priority','duedate')
+    fields = ('title','contents','priority','duedate')
     success_url = reverse_lazy('list')
 
 # ToDoの削除機能
 
 class TodoDelete(DeleteView):
-    template_name = 'delete.html'
+    template_name = 'todo/delete.html'
     model = TodoModel
     success_url = reverse_lazy('list')
 
 # ToDoの編集機能
 
 class TodoUpdate(UpdateView):
-    template_name = 'update.html'
+    template_name = 'todo/update.html'
     model = TodoModel
-    fields = ('title','memo','priority','duedate')
+    fields = ('title','contents','priority','duedate')
     success_url = reverse_lazy('list')
 
 #class IndexView(generic.ListView):

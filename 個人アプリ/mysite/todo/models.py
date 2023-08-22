@@ -15,6 +15,7 @@ class TodoModel(models.Model):
                                 choices=CHOICE,
                                 null = True)
     duedate = models.DateField()
+    completed = models.BooleanField(default=False)
     def __str__(self):
         return self.title    
 
